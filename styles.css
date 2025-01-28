@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #D5EDFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    margin: 0;
+}
+
+.board {
+    display: grid;
+    gap: 2px;
+}
+
+.tile {
+    width: 30px;
+    height: 30px;
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tile.clicked {
+    background-color: #c1c1c1;
+    box-shadow: none;
+}
+
+.tile.flagged {
+    background-image: url('https://img.alicdn.com/imgextra/i1/O1CN011JCO9B23Ug3p5EzB8_!!6000000007259-2-tps-898-898.png');
+    background-size: cover;
+}
+
+.tile.bomb {
+    background-image: url('https://img.alicdn.com/imgextra/i3/O1CN01sMUftH1WAB0m3EG8W_!!6000000002747-2-tps-357-356.png');
+    background-size: cover;
+}
+
+.tile[data-number="1"] {
+    color: #0101FE;
+}
+
+.tile[data-number="2"] {
+    color: #0A8209;
+}
+
+.tile[data-number="3"] {
+    color: #e74c3c;
+}
+
+.tile[data-number="4"] {
+    color: #3498db;
+}
+
+.tile[data-number="5"] {
+    color: #e67e22;
+}
+
+.tile[data-number="6"] {
+    color: #2ecc71;
+}
+
+.tile[data-number="7"] {
+    color: #9b59b6;
+}
+
+.tile[data-number="8"] {
+    color: #34495e;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .tile {
+        width: 15px;
+        height: 15px;
+        font-size: 12px;
+    }
+}
