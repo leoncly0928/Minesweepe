@@ -2,8 +2,12 @@ const board = document.getElementById('board');
 const resetButton = document.getElementById('reset-button');
 const bombCountDisplay = document.getElementById('bomb-count');
 const flagCountDisplay = document.getElementById('flag-count');
+const difficultySelect = document.getElementById('difficulty');
+const overlay = document.getElementById('overlay');
+const gameResult = document.getElementById('game-result');
+const confirmButton = document.getElementById('confirm-button');
 
-let size = 10;
+let size = 5; // 默认简单模式
 let bombFrequency = 0.15;
 let bombs = [];
 let flags = 0;
@@ -16,11 +20,13 @@ function init() {
     flags = 0;
     revealedTiles = 0;
     gameOver = false;
+    size = difficultySelect.value === 'easy' ? 5 : 10; // 根据难度选择调整大小
     bombCountDisplay.textContent = Math.floor(size * size * bombFrequency);
     flagCountDisplay.textContent = flags;
     generateBoard();
     placeBombs();
     calculateNumbers();
+    overlay.style.display = 'none'; // 确保覆盖层在游戏开始时隐藏
 }
 
 function generateBoard() {
@@ -133,8 +139,13 @@ function endGame(won) {
         const tile = document.querySelector(`.tile[data-tile="${x},${y}"]`);
         tile.classList.add('bomb');
     });
+    gameResult.textContent = won ? '恭喜你，你赢了！' : '很遗憾，你输了！';
+    overlay.style.display = 'flex';
 }
 
+confirmButton.addEventListener('click', init);
+
 resetButton.addEventListener('click', init);
+difficultySelect.addEventListener('change', init);
 
 init();

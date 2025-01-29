@@ -15,8 +15,21 @@
             Flags: <span id="flag-count">0</span>
         </div>
     </header>
+    <div>
+        <label for="difficulty">难度:</label>
+        <select id="difficulty">
+            <option value="easy">简单</option>
+            <option value="hard">困难</option>
+        </select>
+    </div>
     <div class="board" id="board"></div>
     <button id="reset-button">New Game</button>
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <h2 id="game-result"></h2>
+            <button id="confirm-button">确认</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
