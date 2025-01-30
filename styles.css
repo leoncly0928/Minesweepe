@@ -16,8 +16,9 @@ header {
 
 header h1 {
     font-family: 'Arial Black', sans-serif;
-    font-weight: 900;
+    font-weight: 500;
     margin: 0;
+    font-size: 24px;
 }
 
 .board {
@@ -92,6 +93,18 @@ button {
     cursor: pointer;
 }
 
+/* 隐藏 New Game 按钮 */
+#reset-button {
+    display: none;
+}
+
+#record-button {
+    margin-top: 20px;
+    padding: 5px 10px; /* 修改 padding 以减小按钮大小 */
+    font-size: 14px; /* 修改 font-size 以减小按钮文字大小 */
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .tile {
         width: 30px;
@@ -135,4 +148,18 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+#record-overlay {
+    display: none;
+}
+
+#record-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#record-list li {
+    margin: 5px 0;
 }
